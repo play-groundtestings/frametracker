@@ -45,8 +45,9 @@ export default {
 
   <main>
     <div class="wrapper">
+      <div style="text-align: center;"> <B>FRAME AVAILABILITY</B> </div> <hr>
       <div> <input v-model="inputjonumber" placeholder="Input your J.O. number"> <button id="findButton" @click="findResults">Check</button> </div>
-      
+
       <div v-if="myindex === 0"> <b>J.O. Number:</b> {{ inputjonumber }} </div>
       <div v-else>
         <b>J.O. Number: </b> {{ inputjonumber }} <br>
@@ -73,7 +74,8 @@ export default {
   background-color: gainsboro;
   padding-left: 2%;
   padding-top: 2%;
-  padding-bottom: 2%;
+  padding-bottom: 2%; 
+  padding-right: 2%;
   width: 20%;
   font-family: Arial, Helvetica, sans-serif;
 }
