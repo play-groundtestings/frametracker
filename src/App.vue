@@ -1,6 +1,4 @@
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-import TheWelcome from './components/TheWelcome.vue'
 
 export default {
   name: 'App',
@@ -13,11 +11,11 @@ export default {
     }
   },
   computed: {
-    findResults(){
+    findResults() {
       let index
-      for(var i = 0; i<this.framelist.values.length;i++){
-        for(var k = 0; k<this.framelist.values[0].length;k++){
-          if(this.framelist.values[i][k] == this.text){
+      for (var i = 0; i < this.framelist.values.length; i++) {
+        for (var k = 0; k < this.framelist.values[0].length; k++) {
+          if (this.framelist.values[i][k] == this.text) {
             index = i
             this.myindex = index
           }
@@ -33,11 +31,10 @@ export default {
     }
   },
   components: {
-
   },
   mounted() {
 
-  this.getData()
+    this.getData()
 
   }
 }
@@ -45,29 +42,44 @@ export default {
 </script>
 
 <template>
-  <header>
-
-    <div class="wrapper">
-      <HelloWorld msg="You did it!" />
-
-    </div>
-    <br>
-    <div id="content"></div>
-    <div> {{ numberdata + 1 }}</div>
-    <hr>
-    <div> {{ framelist.values}}</div>
-    <div> <input v-model="text"> <button id="findButton" @click="findResults">Check</button> </div>
-    <div v-if="myindex!==0"> <b>Name:  </b> {{ framelist.values[this.myindex][0] }} <b>J.O. Number</b> {{ text }} <b>Ready for Pickup: </b>  {{framelist.values[this.myindex][5]}}</div>
-    <div v-else><b>J.O Number</b> {{ text }}</div>
-  </header>
+  <header></header>
 
   <main>
-    <TheWelcome />
+    <div class="wrapper">
+      <div> <input v-model="text" placeholder="Input your J.O. number"> <button id="findButton" @click="findResults">Check</button> </div>
+      <div v-if="myindex === 0"> <b>J.O. Number:</b> {{ text }} </div>
+      <div v-else>
+        <b>J.O. Number: </b> {{ text }} <br>
+        <b>Name: </b> {{ framelist.values[this.myindex][0] }}<br>
+        <b>Ready for Pickup: </b>
+        
+        <span v-if="framelist.values[this.myindex][5]=='yes'" style="color:green">
+          ✔
+        </span>
+        <span v-else style="color:red">
+          ✘
+        </span>
+
+
+      </div>
+    </div>
   </main>
 </template>
 
-<!--
-  
-  https://sheets.googleapis.com/v4/spreadsheets/186-7MMQBauKDWO4E9Vk-4hbVhTVPYtMHRSjRK9ZITpQ/values/woodrose/?alt=json&key=AIzaSyCkPCG3NLQ4bMpRQsDPir9mKFgKvybmQvE
-  <b>Name:  </b> {{ framelist.values[this.myindex][0] }} <b>J.O. Number</b> {{ framelist.values[this.myindex][2] }} <b>Ready for Pickup: </b>  {{framelist.values[this.myindex][5]}}
--->
+<style scoped>
+
+.wrapper{
+  border: 3px solid aliceblue;
+  background-color: gainsboro;
+  padding-left: 2%;
+  padding-top: 2%;
+  padding-bottom: 2%;
+  width: 20%;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+input{
+  margin-bottom:5%;
+}
+
+</style>
