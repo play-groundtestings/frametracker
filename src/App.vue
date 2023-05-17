@@ -4,10 +4,9 @@ export default {
   name: 'App',
   data() {
     return {
-      numberdata: 68,
       framelist: [],
       myindex: 0,
-      text: ""
+      inputjonumber: ""
     }
   },
   computed: {
@@ -15,7 +14,7 @@ export default {
       let index
       for (var i = 0; i < this.framelist.values.length; i++) {
         for (var k = 0; k < this.framelist.values[0].length; k++) {
-          if (this.framelist.values[i][k] == this.text) {
+          if (this.framelist.values[i][k] == this.inputjonumber) {
             index = i
             this.myindex = index
           }
@@ -46,10 +45,11 @@ export default {
 
   <main>
     <div class="wrapper">
-      <div> <input v-model="text" placeholder="Input your J.O. number"> <button id="findButton" @click="findResults">Check</button> </div>
-      <div v-if="myindex === 0"> <b>J.O. Number:</b> {{ text }} </div>
+      <div> <input v-model="inputjonumber" placeholder="Input your J.O. number"> <button id="findButton" @click="findResults">Check</button> </div>
+      
+      <div v-if="myindex === 0"> <b>J.O. Number:</b> {{ inputjonumber }} </div>
       <div v-else>
-        <b>J.O. Number: </b> {{ text }} <br>
+        <b>J.O. Number: </b> {{ inputjonumber }} <br>
         <b>Name: </b> {{ framelist.values[this.myindex][0] }}<br>
         <b>Ready for Pickup: </b>
         
