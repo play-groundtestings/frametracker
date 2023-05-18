@@ -64,25 +64,26 @@ export default {
 
       </div>
     </div>
-
-    <div v-if="myindex != 0">
-      <div class="wrapper">
-
-        Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
-        Details:<br>
-        Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br>
-        Dalyn Deles <br>
-        Contact Number: +63 917 577 3406 <br><br>
-
-        The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. 
-      </div>
-    </div>
-
+    <div v-if="myindex === 0"> </div>
     <div v-else>
-      <div class="wrapper">
+      <div v-if="framelist.values[this.myindex][5]=='yes'">
+        <div class="wrapper">
 
-        Your frame is not ready yet. Please check again later.
+          Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
+          Details:<br>
+          Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br>
+          Dalyn Deles <br>
+          Contact Number: +63 917 577 3406 <br><br>
 
+          The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. 
+        </div>
+      </div>
+      <div v-else>
+        <div class="wrapper">
+
+          Your frame is not ready yet. Please check again later.
+
+        </div>
       </div>
     </div>
 
