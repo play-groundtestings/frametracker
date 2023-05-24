@@ -12,6 +12,7 @@ export default {
   computed: {
     findResults() {
       let index
+      console.log(this.framelist.values)
       for (var i = 0; i < this.framelist.values.length; i++) {
         for (var k = 0; k < this.framelist.values[0].length; k++) {
           if (this.framelist.values[i][k] == this.inputjonumber) {
@@ -24,7 +25,7 @@ export default {
   },
   methods: {
     async getData() {
-      const res = await fetch("https://sheets.googleapis.com/v4/spreadsheets/186-7MMQBauKDWO4E9Vk-4hbVhTVPYtMHRSjRK9ZITpQ/values/woodrose/?alt=json&key=AIzaSyCkPCG3NLQ4bMpRQsDPir9mKFgKvybmQvE")
+      const res = await fetch("https://sheets.googleapis.com/v4/spreadsheets/186-7MMQBauKDWO4E9Vk-4hbVhTVPYtMHRSjRK9ZITpQ/values/In-Studio%20Shoots/?alt=json&key=AIzaSyCkPCG3NLQ4bMpRQsDPir9mKFgKvybmQvE")
       const finalRes = await res.json()
       this.framelist = finalRes
     }
