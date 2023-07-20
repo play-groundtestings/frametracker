@@ -71,11 +71,12 @@ export default {
         <div class="wrapper">
 
           Your photo package is ready for pick-up! Please text Mars at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
-          Details:<br>
+          Contact Details:<br><br>
           Name: Mars<br>
-          Contact Number: 0936 227 8950 <br>
+          Contact Number: +63 936 227 8950 <br>
           Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br><br>
-          The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. 
+          The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. <br>
+          <i>(We have a pin on Grab. Just type “TinoLey Digital Photography, Inc.”)</i>
         </div>
       </div>
       <div v-else>
