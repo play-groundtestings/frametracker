@@ -73,10 +73,8 @@ export default {
           Your photo package is ready for pick-up! Please text Mars at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
           Details:<br>
           Name: Mars<br>
-          Contact Number: 0936 227 8950 <br><br>
-          Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br>
-
-
+          Contact Number: 0936 227 8950 <br>
+          Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br><br>
           The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. 
         </div>
       </div>
