@@ -75,7 +75,7 @@ export default {
           Name: Mars<br>
           Contact Number: +63 936 227 8950 <br>
           Address: Stall LA-16 GSIS Access road. Hobbies of Asia Mall, D. Macapagal Blvd., Pasay City<br>
-          <i style="color: darkgray; font-size:smaller">*We have a pin on Grab. Just type “TinoLey Digital Photography, Inc.”</i><br><br>
+          <i style="color: #242320; font-size:smaller">*We have a pin on Grab. Just type “TinoLey Digital Photography, Inc.”</i><br><br>
           The studio will be open for pickup/delivery between the hours of 9am-4pm, Monday-Saturday. <br>
 
         </div>
