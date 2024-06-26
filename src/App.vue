@@ -70,7 +70,7 @@ export default {
       <div v-if="framelist.values[this.myindex][5]=='yes'">
         <div class="wrapper">
 
-          Your photo package is ready for pick-up! Please text Mars at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
+          Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
           Contact Details:<br><br>
           Name: Dalyn<br>
           Contact Number: +63 917 577 3406 <br>
