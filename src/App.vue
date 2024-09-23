@@ -70,13 +70,13 @@ export default {
       <div v-if="framelist.values[this.myindex][5]=='yes'">
         <div class="wrapper">
 
-          Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier. This would be highly appreciated! <br><br>
-          Contact Details:<br><br>
-          Name: Dalyn<br>
+          Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier (Grab/Lalamove). This would be highly appreciated! <br><br>
+          Pick-Up Details:<br><br>
+          Name: Dalyn <br>
           Contact Number: +63 917 577 3406 <br>
           Hours: 9AM-4PM <br>
-          Address: Stall LA-16 Hobbies of Asia Mall #8 Diosdado Macapagal Blvd. Pasay City   <br>
-          <i style="color: #242320; font-size:smaller">*We have a pin on Grab. Just type “TinoLey Digital Photography, Inc.”</i><br><br>
+          Address: 2nd Floor, 105-E Mariano Ponce St., Caloocan City    <br>
+          <!-- <i style="color: #242320; font-size:smaller">*We have a pin on Grab. Just type “TinoLey Digital Photography, Inc.”</i><br><br> -->
           Note: Please text Dalyn 1-day before you pick up your photo package so she can prepare it! <br>
 
         </div>
