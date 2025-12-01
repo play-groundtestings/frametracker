@@ -85,10 +85,10 @@ export default {
           Contact Number: 0936 227 8950<br>
           Address: 105 Mariano Ponce St. Caloocan City. <br>
           Notes: 2nd Floor, 105-E<br>
-          Hours: 9AM-4PM<br>
+          Hours: 9AM-4PM<br><br>
 
           Note: Please text Mars 1-day before you pick up your photo package so he can prepare it! <br> <br>
-          Let us know if you need help booking a courier. We can be the ones to book the Grab/Lalamove for you. Please just send over your contact number and delivery address to 0936 227 8950 with your request. <br>
+          Let us know if you need help booking a courier. We can be the ones to book the Grab/Lalamove for you. Please just send over your contact number and delivery address to 0936 227 8950 with your request. <br><br>
           Thanks, <br>
           Kate Ley <br><br>
         </div>
