@@ -78,15 +78,19 @@ export default {
     <div v-if="hasSearched && myindex >= 0">
       <div v-if="framelist.values[myindex][5] === 'yes'">
         <div class="wrapper">
-          Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier (Grab/Lalamove).<br><br>
+          Your photo is ready for pick-up! <br><br>
 
           <b>Pick-Up Details:</b><br><br>
-          Name: Dalyn <br>
-          Contact Number: +63 917 577 3406 <br>
-          Hours: 9AM-4PM <br>
-          Address: 2nd Floor, 105-E Mariano Ponce St., Caloocan City <br><br>
+          Name: Mars <br>
+          Contact Number: 0936 227 8950<br>
+          Address: 105 Mariano Ponce St. Caloocan City. <br>
+          Notes: 2nd Floor, 105-E<br>
+          Hours: 9AM-4PM<br>
 
-          Note: Please text Dalyn 1-day before you pick up your photo package so she can prepare it!
+          Note: Please text Mars 1-day before you pick up your photo package so he can prepare it! <br> <br>
+          Let us know if you need help booking a courier. We can be the ones to book the Grab/Lalamove for you. Please just send over your contact number and delivery address to 0936 227 8950 with your request. <br>
+          Thanks, <br>
+          Kate Ley <br><br>
         </div>
       </div>
 
