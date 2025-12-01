@@ -4,10 +4,10 @@ export default {
 
   data() {
     return {
-      framelist: [],        // full sheet data
-      myindex: -1,          // row index, -1 = not found
-      inputjonumber: "",    // user input
-      hasSearched: false    // NEW: only show results after clicking Check
+      framelist: [],
+      myindex: -1,
+      inputjonumber: "",
+      hasSearched: false     // NEW FLAG
     }
   },
 
@@ -18,16 +18,14 @@ export default {
       );
       const finalRes = await res.json();
       this.framelist = finalRes;
-      console.log("Loaded rows:", this.framelist.values?.length);
     },
 
     findResults() {
       if (!this.framelist.values) return;
 
-      this.hasSearched = true;   // user clicked the button
-      this.myindex = -1;         // reset
+      this.hasSearched = true;  // user clicked Check
+      this.myindex = -1;        // reset
 
-      // JO Number is column index 2
       for (let i = 0; i < this.framelist.values.length; i++) {
         const row = this.framelist.values[i];
 
@@ -58,13 +56,13 @@ export default {
         <button id="findButton" @click="findResults">Check</button>
       </div>
 
-      <!-- NOTHING FOUND (only after clicking Check) -->
+      <!-- NOTHING FOUND (ONLY after pressing Check) -->
       <div v-if="hasSearched && myindex === -1">
         <b>J.O. Number:</b> {{ inputjonumber }} <br>
         No matching record found.
       </div>
 
-      <!-- FOUND (only after clicking Check) -->
+      <!-- FOUND (ONLY after pressing Check) -->
       <div v-if="hasSearched && myindex >= 0">
         <b>J.O. Number:</b> {{ inputjonumber }} <br>
         <b>Name:</b> {{ framelist.values[myindex][0] }}<br>
@@ -75,7 +73,6 @@ export default {
       </div>
     </div>
 
-    <!-- READY FOR PICKUP MESSAGE -->
     <div v-if="hasSearched && myindex >= 0">
       <div v-if="framelist.values[myindex][5] === 'yes'">
         <div class="wrapper">
@@ -91,7 +88,6 @@ export default {
         </div>
       </div>
 
-      <!-- NOT READY -->
       <div v-else>
         <div class="wrapper">
           Your frame is not ready yet. Please check again later.
