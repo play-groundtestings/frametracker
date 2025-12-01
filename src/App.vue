@@ -4,9 +4,10 @@ export default {
 
   data() {
     return {
-      framelist: [],       // full sheet data
-      myindex: -1,         // -1 means "not found"
-      inputjonumber: ""    // user input
+      framelist: [],        // full sheet data
+      myindex: -1,          // row index, -1 = not found
+      inputjonumber: "",    // user input
+      hasSearched: false    // NEW: only show results after clicking Check
     }
   },
 
@@ -23,7 +24,8 @@ export default {
     findResults() {
       if (!this.framelist.values) return;
 
-      this.myindex = -1; // reset
+      this.hasSearched = true;   // user clicked the button
+      this.myindex = -1;         // reset
 
       // JO Number is column index 2
       for (let i = 0; i < this.framelist.values.length; i++) {
@@ -56,14 +58,14 @@ export default {
         <button id="findButton" @click="findResults">Check</button>
       </div>
 
-      <!-- NOTHING FOUND -->
-      <div v-if="myindex === -1 && inputjonumber">
+      <!-- NOTHING FOUND (only after clicking Check) -->
+      <div v-if="hasSearched && myindex === -1">
         <b>J.O. Number:</b> {{ inputjonumber }} <br>
         No matching record found.
       </div>
 
-      <!-- FOUND -->
-      <div v-if="myindex >= 0">
+      <!-- FOUND (only after clicking Check) -->
+      <div v-if="hasSearched && myindex >= 0">
         <b>J.O. Number:</b> {{ inputjonumber }} <br>
         <b>Name:</b> {{ framelist.values[myindex][0] }}<br>
 
@@ -74,7 +76,7 @@ export default {
     </div>
 
     <!-- READY FOR PICKUP MESSAGE -->
-    <div v-if="myindex >= 0">
+    <div v-if="hasSearched && myindex >= 0">
       <div v-if="framelist.values[myindex][5] === 'yes'">
         <div class="wrapper">
           Your photo package is ready for pick-up! Please text Dalyn at least one day before you plan to pick up your package or send over a courier (Grab/Lalamove).<br><br>
