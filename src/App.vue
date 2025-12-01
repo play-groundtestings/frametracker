@@ -4,36 +4,43 @@ export default {
 
   data() {
     return {
-      framelist: [],
-      myindex: -1,
-      inputjonumber: "",
-      hasSearched: false     // NEW FLAG
+      framelist: [],        // full sheet data
+      myindex: -1,          // row index, -1 = not found
+      inputjonumber: "",    // user input
+      hasSearched: false    // whether user pressed Check
     }
   },
 
   methods: {
     async getData() {
-      const res = await fetch(
-        "https://sheets.googleapis.com/v4/spreadsheets/186-7MMQBauKDWO4E9Vk-4hbVhTVPYtMHRSjRK9ZITpQ/values/In-Studio%20Shoots/?alt=json&key=AIzaSyCkPCG3NLQ4bMpRQsDPir9mKFgKvybmQvE"
-      );
-      const finalRes = await res.json();
-      this.framelist = finalRes;
+      try {
+        const res = await fetch(
+          "https://sheets.googleapis.com/v4/spreadsheets/186-7MMQBauKDWO4E9Vk-4hbVhTVPYtMHRSjRK9ZITpQ/values/In-Studio%20Shoots/?alt=json&key=AIzaSyCkPCG3NLQ4bMpRQsDPir9mKFgKvybmQvE"
+        );
+        const finalRes = await res.json();
+        this.framelist = finalRes;
+      } catch (e) {
+        console.error("Failed to load sheet:", e);
+        this.framelist = { values: [] };
+      }
     },
 
     findResults() {
+      this.hasSearched = true;  // mark that user clicked Check
+      this.myindex = -1;        // reset index
+
       if (!this.framelist.values) return;
 
-      this.hasSearched = true;  // user clicked Check
-      this.myindex = -1;        // reset
-
+      // JO Number is column index 2
       for (let i = 0; i < this.framelist.values.length; i++) {
         const row = this.framelist.values[i];
-
         if (row[2] && row[2].toString() === this.inputjonumber.toString()) {
           this.myindex = i;
           return;
         }
       }
+
+      // intentionally do not show any message if no match
     }
   },
 
@@ -56,13 +63,7 @@ export default {
         <button id="findButton" @click="findResults">Check</button>
       </div>
 
-      <!-- NOTHING FOUND (ONLY after pressing Check) -->
-      <div v-if="hasSearched && myindex === -1">
-        <b>J.O. Number:</b> {{ inputjonumber }} <br>
-        No matching record found.
-      </div>
-
-      <!-- FOUND (ONLY after pressing Check) -->
+      <!-- SHOW RESULTS ONLY IF FOUND -->
       <div v-if="hasSearched && myindex >= 0">
         <b>J.O. Number:</b> {{ inputjonumber }} <br>
         <b>Name:</b> {{ framelist.values[myindex][0] }}<br>
@@ -73,6 +74,7 @@ export default {
       </div>
     </div>
 
+    <!-- READY FOR PICKUP MESSAGE (only when found) -->
     <div v-if="hasSearched && myindex >= 0">
       <div v-if="framelist.values[myindex][5] === 'yes'">
         <div class="wrapper">
