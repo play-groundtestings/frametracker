@@ -81,10 +81,10 @@ export default {
           Your photo is ready for pick-up! <br><br>
 
           <b>Pick-Up Details:</b><br><br>
-          Name: Mars <br>
-          Contact Number: <br>
+          Name: Mars <br><br>
+          Contact Numbers: <br>
           TM - 0955 478 8874 <br>
-          Smart - 0968 533 4680<br>
+          Smart - 0968 533 4680<br><br>
           
           Address: 105 Mariano Ponce St. Caloocan City. <br>
           Notes: 2nd Floor, 105-E<br>
