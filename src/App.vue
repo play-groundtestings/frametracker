@@ -82,7 +82,10 @@ export default {
 
           <b>Pick-Up Details:</b><br><br>
           Name: Mars <br>
-          Contact Number: 0936 227 8950<br>
+          Contact Number: <br>
+          TM - 0955 478 8874 <br>
+          Smart - 0968 533 4680<br>
+          
           Address: 105 Mariano Ponce St. Caloocan City. <br>
           Notes: 2nd Floor, 105-E<br>
           Hours: 9AM-4PM<br><br>
